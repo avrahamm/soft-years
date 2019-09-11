@@ -12,6 +12,10 @@ use App\Entity\Category;
 
 class AppFixtures extends Fixture
 {
+
+    /**
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager)
     {
         $this->faker = Factory::create();
@@ -20,6 +24,11 @@ class AppFixtures extends Fixture
         $this->createCategories($manager);
     }
 
+    /**
+     * Creates years.
+     *
+     * @param ObjectManager $manager
+     */
     private function createYears(ObjectManager $manager)
     {
         for ($i = 0; $i < 10; $i++)
@@ -33,6 +42,11 @@ class AppFixtures extends Fixture
         $manager->flush();
     }
 
+    /**
+     * Creates categories.
+     *
+     * @param ObjectManager $manager
+     */
     private function createCategories(ObjectManager $manager)
     {
         $years = $manager->getRepository(Year::class)
