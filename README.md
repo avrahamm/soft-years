@@ -19,9 +19,9 @@ php bin/console doctrine:fixtures:load
 - You can check DB tables to assure the data was populated.
  
 - 4) There are 2 actions,
-- 1) To see all existing years : 
+- 4.1) To see all existing years : 
    http://www.soft.test/years 
-- 2) to see some year data
+- 4.2) to see some year data
   http://www.soft.test/years/2009
 
 
