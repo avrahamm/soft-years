@@ -10,10 +10,18 @@ use Faker\Generator;
 use App\Entity\Year;
 use App\Entity\Category;
 
+/**
+ * To create sample data and store to database.
+ *
+ * Class AppFixtures
+ * @package App\DataFixtures
+ */
 class AppFixtures extends Fixture
 {
-
+    const YEARS_NUM = 3;
     /**
+     * Creates sample data.
+     *
      * @param ObjectManager $manager
      */
     public function load(ObjectManager $manager)
@@ -31,7 +39,7 @@ class AppFixtures extends Fixture
      */
     private function createYears(ObjectManager $manager)
     {
-        for ($i = 0; $i < 10; $i++)
+        for ($i = 0; $i < self::YEARS_NUM; $i++)
         {
             $year = new Year();
             $year->setYear($this->faker->year);
@@ -67,8 +75,6 @@ class AppFixtures extends Fixture
         }
     }
 
-    /** @var ObjectManager */
-    private $manager;
     /** @var Generator */
     protected $faker;
 }

@@ -2,12 +2,15 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+use JMS\Serializer\Annotation as Serializer;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\YearRepository")
+ * @ORM\Table(name="year")
+ * @Serializer\ExclusionPolicy("none")
  */
 class Year
 {
@@ -15,6 +18,7 @@ class Year
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Serializer\Exclude()
      */
     private $id;
 

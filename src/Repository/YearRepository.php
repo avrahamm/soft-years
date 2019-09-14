@@ -19,32 +19,20 @@ class YearRepository extends ServiceEntityRepository
         parent::__construct($registry, Year::class);
     }
 
-    // /**
-    //  * @return Year[] Returns an array of Year objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * Returns all years.
+     * @return array of Objects like {"year": "1983"}
+     *
+     */
+    public function findAllYears() : array
     {
+        $temp = 1;
         return $this->createQueryBuilder('y')
-            ->andWhere('y.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('y.id', 'ASC')
+            ->select('y.year')
+            ->orderBy('y.year', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
-        ;
+            ;
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Year
-    {
-        return $this->createQueryBuilder('y')
-            ->andWhere('y.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
