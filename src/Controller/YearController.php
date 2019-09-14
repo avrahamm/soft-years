@@ -28,7 +28,7 @@ class YearController extends AbstractController
     /**
      * Writes welcome message.
      *
-     * @Route("/year", name="year")
+     * @Route("/index", name="index")
      * @return JsonResponse
      */
     public function index() :JsonResponse
@@ -60,10 +60,9 @@ class YearController extends AbstractController
 
     /**
      * @Route("/years", name="allYears")
-     * @param string $year
      * @return JsonResponse
      */
-    public function getAllYears()
+    public function getAllYears() : JsonResponse
     {
         $allYears = $this->em
             ->getRepository(Year::class)
