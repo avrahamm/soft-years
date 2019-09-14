@@ -11,14 +11,14 @@ composer install
   open .env and set
   DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"
 
--3) create DB and populate sample data.
+- 3) create DB and populate sample data.
 php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
 php bin/console doctrine:fixtures:load
 
 - You can check DB tables to assure the data was populated.
  
--4) There are 2 actions,
+- 4) There are 2 actions,
 - 1) To see all existing years : 
    http://www.soft.test/years 
 - 2) to see some year data
