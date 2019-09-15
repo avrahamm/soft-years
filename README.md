@@ -7,6 +7,8 @@
 - 1) clone 
 <br/>
 git clone https://github.com/avrahamm/soft-years.git soft-years
+  <br/>
+ cd soft-years
 <br/>
 composer install
 </p>
