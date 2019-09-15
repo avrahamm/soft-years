@@ -1,10 +1,8 @@
 # Server part
 - I used XAMP with apache and virtual hosts, 
-<br/>
- I called my virtual host http://www.soft.test/ 
+  I called my virtual host http://www.soft.test/ 
  <br/>
 - Server is developped in Symfony framework.
-
 <p>
 - 1) clone 
 <br/>
