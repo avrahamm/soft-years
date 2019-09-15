@@ -1,7 +1,4 @@
 # Server part
-- I used XAMP with apache and virtual hosts, 
-  for example http://www.soft.years/ 
- <br/>
 - Server is developped in Symfony framework, <br/>
  uses Doctrine, Cache and JMSSerializer.
 <p>
@@ -10,7 +7,12 @@
 git clone https://github.com/avrahamm/soft-years.git soft-years
   <br/>
  cd soft-years
-<br/>
+  <br/>
+  - I used XAMP with apache and virtual hosts, 
+  for example http://www.soft.years/ 
+ <br/> or clone to htdocs/soft-years folder 
+ <br/> and after completing setup open http://localhost/soft-years/public
+  <br/>
 composer install
 </p>
 <p>
@@ -37,7 +39,7 @@ php bin/console doctrine:fixtures:load
 <br/>
    http://www.soft.test/years 
  <br/>
-- to see some specific year data
+- to see specific year data
 <br/>
   http://www.soft.test/years/2009
  </p>
