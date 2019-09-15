@@ -50,9 +50,8 @@ class YearController extends AbstractController
     public function getYearData(string $year) : JsonResponse
     {
         try {
-            $yearData = $this->em->getRepository(Year::class)
+            $yearJsonData = $this->em->getRepository(Year::class)
                 ->getYearData($year);
-            $yearJsonData = $this->serializer->serialize($yearData, 'json');
         }
         catch (\Exception $ex ) {
             return new JsonResponse("Invalid data. ".$ex->getMessage());
@@ -73,7 +72,7 @@ class YearController extends AbstractController
         $allYears = $this->em
             ->getRepository(Year::class)
             ->findAllYears();
-        return $this->json($allYears);
+        return $this->json(['data' => $allYears]);
     }
 
     /** @var EntityManagerInterface  */

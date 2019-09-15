@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use JMS\Serializer\SerializerInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Symfony\Contracts\Cache\TagAwareCacheInterface;
@@ -10,17 +11,17 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use App\Entity\Year;
 
 /**
- * @method Year|null find($id, $lockMode = null, $lockVersion = null)
- * @method Year|null findOneBy(array $criteria, array $orderBy = null)
- * @method Year[]    findAll()
- * @method Year[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * YearRepository uses cache to  fetch from database.
+ * JMSSerializer is used to serialize to json.
  */
 class YearRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry, TagAwareCacheInterface $cache)
+    public function __construct(ManagerRegistry $registry, TagAwareCacheInterface $cache,
+                                SerializerInterface $serializer)
     {
         parent::__construct($registry, Year::class);
         $this->cache = $cache;
+        $this->serializer = $serializer;
     }
 
     /**
@@ -30,13 +31,15 @@ class YearRepository extends ServiceEntityRepository
      * @return mixed
      * @throws \Psr\Cache\InvalidArgumentException
      */
-    public function getYearData($year)
+    public function getYearData(string $year)
     {
-        $yearData = $this->cache->get("yearData{$year}", function (ItemInterface $item) use ($year) {
+        $yearJsonData = $this->cache->get("yearData{$year}", function (ItemInterface $item) use ($year) {
             $item->expiresAfter(3600);
-            return $this->findOneBy(['year'=>$year]);
+            $yearData = $this->findOneBy(['year'=>$year]);
+            $yearJsonData = $this->serializer->serialize($yearData, 'json');
+            return $yearJsonData;
         });
-        return $yearData;
+        return $yearJsonData;
     }
 
     /**
@@ -62,4 +65,7 @@ class YearRepository extends ServiceEntityRepository
 
     /** @var TagAwareCacheInterface */
     private $cache;
+
+    /** @var SerializerInterface */
+    private $serializer;
 }
