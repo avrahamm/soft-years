@@ -1,6 +1,6 @@
 # Server part
 - I used XAMP with apache and virtual hosts, 
-  I called my virtual host http://www.soft.test/ 
+  for example host http://www.soft.years/ 
  <br/>
 - Server is developped in Symfony framework.
 <p>
