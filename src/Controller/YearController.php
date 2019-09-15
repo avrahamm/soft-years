@@ -40,15 +40,18 @@ class YearController extends AbstractController
     }
 
     /**
+     * Return the year data.
+     *
      * @Route("/years/{year}", name="yearData")
      * @param string $year
      * @return JsonResponse
+     * @throws \Psr\Cache\InvalidArgumentException
      */
     public function getYearData(string $year) : JsonResponse
     {
         try {
             $yearData = $this->em->getRepository(Year::class)
-                ->findOneBy(['year'=>$year]);
+                ->getYearData($year);
             $yearJsonData = $this->serializer->serialize($yearData, 'json');
         }
         catch (\Exception $ex ) {
@@ -59,8 +62,11 @@ class YearController extends AbstractController
     }
 
     /**
+     * Returns all years.
+     *
      * @Route("/years", name="allYears")
      * @return JsonResponse
+     * @throws \Psr\Cache\InvalidArgumentException
      */
     public function getAllYears() : JsonResponse
     {
