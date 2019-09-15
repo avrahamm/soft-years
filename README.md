@@ -5,11 +5,14 @@
  <br/>
 - Server is developped in Symfony framework.
 
-- 1) clone 
+- 1) 
+<p>
+clone 
+<br/>
 git clone https://github.com/avrahamm/soft-years.git soft-years
 <br/>
 composer install
-<br/>
+</p>
 - 2) According https://symfony.com/doc/current/doctrine.html 
   open .env and set
   DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"
