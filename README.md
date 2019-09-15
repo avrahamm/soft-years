@@ -1,8 +1,9 @@
 # Server part
 - I used XAMP with apache and virtual hosts, 
-  for example host http://www.soft.years/ 
+  for example http://www.soft.years/ 
  <br/>
-- Server is developped in Symfony framework.
+- Server is developped in Symfony framework, <br/>
+ uses Doctrine, Cache and JMSSerializer.
 <p>
 - 1) clone 
 <br/>
