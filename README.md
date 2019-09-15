@@ -1,12 +1,12 @@
 # Server part
 - I used XAMP with apache and virtual hosts,
- I called mt virtual host http://www.soft.test/
+ I called my virtual host http://www.soft.test/
 - Server is developped in Symfony framework.
 
 - 1) clone 
 git clone https://github.com/avrahamm/soft-years.git soft-years
 composer install
-
+<br/>
 - 2) According https://symfony.com/doc/current/doctrine.html 
   open .env and set
   DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"
