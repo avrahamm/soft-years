@@ -6,16 +6,16 @@
  */
 
 // any CSS you require will output into a single css file (app.css in this case)
-require('../css/app.css');
+import '../css/app.css';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-const $ = require('jquery');
+import $ from 'jquery';
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 
 // import the function from greet.js (the .js extension is optional)
 // ./ (or ../) means to look for a local file
-var greet = require('./greet');
+import greet from './greet';
 
 $(document).ready(function () {
     $('body').prepend('<h1>' + greet('jill') + '</h1>');
