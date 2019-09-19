@@ -9,14 +9,12 @@
 import '../css/app.css';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-import $ from 'jquery';
+// import $ from 'jquery';
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 
-// import the function from greet.js (the .js extension is optional)
-// ./ (or ../) means to look for a local file
-import greet from './greet';
+import ReactDOM from 'react-dom';
+import React from 'react';
 
-$(document).ready(function () {
-    $('body').prepend('<h1>' + greet('jill') + '</h1>');
-});
+import Test from './hello-react'
+ReactDOM.render(<Test />, document.getElementById('root'));

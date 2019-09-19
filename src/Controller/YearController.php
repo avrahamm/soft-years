@@ -34,7 +34,7 @@ class YearController extends AbstractController
      */
     public function index() :Response
     {
-        return $this->render("base.html.twig");
+        return $this->render("year/index.html.twig");
     }
 
     /**
