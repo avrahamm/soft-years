@@ -7,6 +7,7 @@
         "ext-iconv": "*",
         "doctrine/annotations": "^1.7",
         "jms/serializer-bundle": "^3.4",
+        "nelmio/cors-bundle": "^1.5",
         "sensio/framework-extra-bundle": "^5.4",
         "symfony/apache-pack": "^1.0",
         "symfony/cache": "4.3.*",
