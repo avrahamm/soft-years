@@ -48,3 +48,4 @@ php bin/console doctrine:fixtures:load
 
 # 2) Frontend part.
 Client will operate as stand alone application.
+https://github.com/avrahamm/soft-years-react-client
