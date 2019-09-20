@@ -1,6 +1,8 @@
 # Server part
 - Server is developped in Symfony framework, <br/>
  uses Doctrine, Cache and JMSSerializer.
+ The application doesn't restrict origins  <br/>
+ to avoid CORS error when requested by clients from different domain.
 <p>
 - 1) clone 
 <br/>
@@ -45,4 +47,4 @@ php bin/console doctrine:fixtures:load
  </p>
 
 # 2) Frontend part.
-TBD
+Client will operate as stand alone application.
