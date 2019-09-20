@@ -1,6 +1,6 @@
 # Server part
 - Server is developped in Symfony framework, <br/>
- uses Doctrine, Cache and JMSSerializer.
+ uses Doctrine, Cache and JMSSerializer.<br/>
  The application doesn't restrict origins  <br/>
  to avoid CORS error when requested by clients from different domain.
 <p>
