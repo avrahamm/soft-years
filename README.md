@@ -16,7 +16,7 @@ git clone https://github.com/avrahamm/soft-years.git soft-years
    
  <br/> To try server only you can clone to htdocs/soft-years folder 
  <br/> and after completing setup open http://localhost/soft-years/public
-  <br/> without virtual host.
+  <br/> without virtual host.<br/>
 composer install
 </p>
 <p>
