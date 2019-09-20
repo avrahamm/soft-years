@@ -10,11 +10,13 @@ git clone https://github.com/avrahamm/soft-years.git soft-years
   <br/>
  cd soft-years
   <br/>
-  - I used XAMP with apache and virtual hosts, 
-  for example http://www.soft.years/ 
- <br/> or clone to htdocs/soft-years folder 
+  - I used XAMP with apache and virtual hosts, <br/>
+  so for client sake, please configure virtual host and call it <br/>
+ http://www.soft.server/
+   
+ <br/> To try server only you can clone to htdocs/soft-years folder 
  <br/> and after completing setup open http://localhost/soft-years/public
-  <br/>
+  <br/> without virtual host.
 composer install
 </p>
 <p>
@@ -39,13 +41,14 @@ php bin/console doctrine:fixtures:load
 - 4) There are 2 actions,
 - years numbers To get all existing years : 
 <br/>
-   http://www.soft.test/years 
+   http://www.soft.server/years 
  <br/>
 - to see specific year data
 <br/>
-  http://www.soft.test/years/2009
+  http://www.soft.server/years/2009
  </p>
 
 # 2) Frontend part.
-Client will operate as stand alone application.
+The client will operate as stand alone application,<br/>
+please see <br/>
 https://github.com/avrahamm/soft-years-react-client
