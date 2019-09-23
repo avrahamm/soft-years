@@ -16,5 +16,5 @@ console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-import Test from './hello-react'
-ReactDOM.render(<Test />, document.getElementById('root'));
+import App from './Years/App';
+ReactDOM.render(<App />, document.getElementById('root'));
