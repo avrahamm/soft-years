@@ -54,8 +54,7 @@ class YearController extends AbstractController
         catch (\Exception $ex ) {
             return new JsonResponse("Invalid data. ".$ex->getMessage());
         }
-        $jsonResult = $this->json(['data' =>$yearJsonData]);
-        return $jsonResult;
+        return $this->json(['data' =>$yearJsonData]);
     }
 
     /**
