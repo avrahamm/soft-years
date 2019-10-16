@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use JMS\Serializer\SerializerInterface;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,14 +30,11 @@ class YearController extends AbstractController
      * Writes welcome message.
      *
      * @Route("/index", name="index")
-     * @return JsonResponse
+     * @return Response
      */
-    public function index() :JsonResponse
+    public function index() :Response
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/YearController.php',
-        ]);
+        return $this->render("year/index.html.twig");
     }
 
     /**
