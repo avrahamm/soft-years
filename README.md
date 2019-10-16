@@ -1,4 +1,4 @@
-# Server part
+# 1) Server part - Symfony with React
 - Server is developped in Symfony framework, <br/>
  uses Doctrine, Cache and JMSSerializer.<br/>
  The application doesn't restrict origins  <br/>
