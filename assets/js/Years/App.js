@@ -19,7 +19,7 @@ class App extends Component {
         };
     }
 
-    setYear = (event) =>
+    setYear(event)
     {
         let selectedYear = event.target.value;
         console.log(selectedYear);
@@ -93,7 +93,7 @@ class App extends Component {
         {
             return <li key={index} value={item.year}
                        className={"cursor-pointer"}
-                       onClick={this.setYear} >
+                       onClick={this.setYear.bind(this)} >
                 {item.year}
             </li>;
         });
